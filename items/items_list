@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Your Items</h1>
+    <a href="{% url 'item_create' %}">New Item</a>
+    <ul>
+      {% for item in items %}
+        <li>
+          <strong>{{ item.title }}</strong> ({{ item.status }})
+          <a href="{% url 'item_edit' item.pk %}">edit</a>
+          <a href="{% url 'item_delete' item.pk %}">delete</a>
+        </li>
+      {% empty %}
+        <li>No items yet.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

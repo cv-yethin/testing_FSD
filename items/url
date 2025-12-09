@@ -1,0 +1,11 @@
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("items.urls")),  # home shows item list
+    path("signup/", ...),  # your existing auth views
+    path("login/", ...),
+    path("logout/", ...),
+    path("dashboard/", ...),
+]
